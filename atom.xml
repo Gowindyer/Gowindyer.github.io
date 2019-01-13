@@ -2,17 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Windyer&#39;s Bolg</title>
   
-  
+  <subtitle>Nothing is possible!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
   <updated>2019-01-13T00:43:33.300Z</updated>
   <id>http://yoursite.com/</id>
-  
-  <author>
-    <name>风</name>
-    
-  </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
