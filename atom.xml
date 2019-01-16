@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-15T14:36:30.286Z</updated>
+  <updated>2019-01-16T01:24:35.844Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -16,7 +16,7 @@
     <link href="http://yoursite.com/2019/01/15/kaiduan/"/>
     <id>http://yoursite.com/2019/01/15/kaiduan/</id>
     <published>2019-01-14T16:00:00.000Z</published>
-    <updated>2019-01-15T14:36:30.286Z</updated>
+    <updated>2019-01-16T01:24:35.844Z</updated>
     
     <summary type="html">
     
@@ -34,28 +34,6 @@
       <category term="风" scheme="http://yoursite.com/tags/%E9%A3%8E/"/>
     
       <category term="外风" scheme="http://yoursite.com/tags/%E5%A4%96%E9%A3%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/01/13/hello-world/"/>
-    <id>http://yoursite.com/2019/01/13/hello-world/</id>
-    <published>2019-01-12T23:45:50.681Z</published>
-    <updated>2019-01-15T13:42:56.700Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
