@@ -575,7 +575,8 @@
 </blockquote>
 <p>​              单位热源的热方程的一般形式是</p>
 <script type="math/tex; mode=display">
-\frac{\partial u}{\partial t} - \Delta u = 1</script>
+\frac{\partial u}{\partial t} - \Delta u = 1</script><h4 id="2-1-1-定义问题"><a href="#2-1-1-定义问题" class="headerlink" title="2.1.1  定义问题"></a>2.1.1  定义问题</h4><p>​         创建一个$x \in\left[ {0,2} \right] ,y\in\left[ {0,2} \right]$的正方形域，里面包含一个半径为0.4与正方形同心的圆作为选定的初始条件。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">R1 = [<span class="number">3</span>;<span class="number">4</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>];</span><br><span class="line">C1 = [<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>;<span class="number">0.4</span>];</span><br><span class="line">C1 = [C1;<span class="built_in">zeros</span>(<span class="built_in">length</span>(R1)-<span class="built_in">length</span>(C1),<span class="number">1</span>)];</span><br><span class="line">gd = [R1,C1];</span><br><span class="line">sf = <span class="string">'R1+C1'</span>;</span><br><span class="line">ns = char(<span class="string">'R1'</span>,<span class="string">'C1'</span>)';</span><br><span class="line">g = decsg(gd,sf,ns);</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1254,6 +1255,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

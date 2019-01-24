@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Windyer&#39;s Bolg">
 <meta property="og:description" content="1. 偏微分方程工具箱介绍 本工具箱采用有限元分析求解偏微分方程  ​         偏微分方程工具箱提供有限元分析在 2-D，3-D和时间变量的空间下求解偏微分方程。通过它你可以选定和网格化 2-D 和 3-D 的几何空间并且规定边界条件和方程。也就是说在几何上，你可以用它求解 定常域（不含时间）、时域、频域和特征值问题。用于后处理的函数，如绘制结果的函数可以可视化研究结果。 ​">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-24T12:12:56.908Z">
+<meta property="og:updated_time" content="2019-01-24T12:33:55.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB求解偏微分方程">
 <meta name="twitter:description" content="1. 偏微分方程工具箱介绍 本工具箱采用有限元分析求解偏微分方程  ​         偏微分方程工具箱提供有限元分析在 2-D，3-D和时间变量的空间下求解偏微分方程。通过它你可以选定和网格化 2-D 和 3-D 的几何空间并且规定边界条件和方程。也就是说在几何上，你可以用它求解 定常域（不含时间）、时域、频域和特征值问题。用于后处理的函数，如绘制结果的函数可以可视化研究结果。 ​">
@@ -412,7 +412,8 @@
 </blockquote>
 <p>​              单位热源的热方程的一般形式是</p>
 <script type="math/tex; mode=display">
-\frac{\partial u}{\partial t} - \Delta u = 1</script>
+\frac{\partial u}{\partial t} - \Delta u = 1</script><h4 id="2-1-1-定义问题"><a href="#2-1-1-定义问题" class="headerlink" title="2.1.1  定义问题"></a>2.1.1  定义问题</h4><p>​         创建一个$x \in\left[ {0,2} \right] ,y\in\left[ {0,2} \right]$的正方形域，里面包含一个半径为0.4与正方形同心的圆作为选定的初始条件。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">R1 = [<span class="number">3</span>;<span class="number">4</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>];</span><br><span class="line">C1 = [<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>;<span class="number">0.4</span>];</span><br><span class="line">C1 = [C1;<span class="built_in">zeros</span>(<span class="built_in">length</span>(R1)-<span class="built_in">length</span>(C1),<span class="number">1</span>)];</span><br><span class="line">gd = [R1,C1];</span><br><span class="line">sf = <span class="string">'R1+C1'</span>;</span><br><span class="line">ns = char(<span class="string">'R1'</span>,<span class="string">'C1'</span>)';</span><br><span class="line">g = decsg(gd,sf,ns);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -603,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-偏微分方程工具箱介绍"><span class="nav-number">1.</span> <span class="nav-text">1. 偏微分方程工具箱介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1主要特点"><span class="nav-number">1.1.</span> <span class="nav-text">1.1主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-例子"><span class="nav-number">2.</span> <span class="nav-text">2. 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在方域上的非均匀热方程"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 在方域上的非均匀热方程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-偏微分方程工具箱介绍"><span class="nav-number">1.</span> <span class="nav-text">1. 偏微分方程工具箱介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1主要特点"><span class="nav-number">1.1.</span> <span class="nav-text">1.1主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-例子"><span class="nav-number">2.</span> <span class="nav-text">2. 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在方域上的非均匀热方程"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 在方域上的非均匀热方程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-定义问题"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1  定义问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1169,6 +1170,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
