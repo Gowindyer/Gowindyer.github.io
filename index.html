@@ -441,6 +441,175 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/MATLAB求解偏微分方程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Windyer's Bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/24/MATLAB求解偏微分方程/" itemprop="url">MATLAB求解偏微分方程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T00:00:00+08:00">
+                2019-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算科学/" itemprop="url" rel="index">
+                    <span itemprop="name">计算科学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/24/MATLAB求解偏微分方程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/24/MATLAB求解偏微分方程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-偏微分方程工具箱介绍"><a href="#1-偏微分方程工具箱介绍" class="headerlink" title="1. 偏微分方程工具箱介绍"></a>1. 偏微分方程工具箱介绍</h2><blockquote>
+<p>本工具箱采用有限元分析求解偏微分方程</p>
+</blockquote>
+<p>​         偏微分方程工具箱提供有限元分析在 2-D，3-D和时间变量的空间下求解偏微分方程。通过它你可以选定和网格化 2-D 和 3-D 的几何空间并且规定边界条件和方程。也就是说在几何上，你可以用它求解 定常域（不含时间）、时域、频域和特征值问题。用于后处理的函数，如绘制结果的函数可以可视化研究结果。</p>
+<p>​          它能用于求解从标准问题的提炼出的偏微分方程。例如，扩散、热传导、结构力学、静电学、电磁学 和 交流电电磁学 （原作: AC power electromagnetics）以及定制耦合PDEs系统的问题。</p>
+<h3 id="1-1主要特点"><a href="#1-1主要特点" class="headerlink" title="1.1主要特点"></a>1.1主要特点</h3><ul>
+<li>可以求解耦合PDEs系统：定常，时域，频域和特征值</li>
+<li>PDE要符合椭圆型、抛物线型和双曲线型问题</li>
+<li>边界条件的选择： Dirichlet（第一类边界条件），generalized Neumann（第二类边界条件)，and mix(Robin or 第三类边界条件)</li>
+<li>由STL文件输入，可用函数创建2-D几何图形和3-D几何图像</li>
+<li>要自动网格化，请使用 tetrahedra and triangles</li>
+<li>同时可视化多方案的参量、网格覆盖和动画处理</li>
+</ul>
+<h2 id="2-例子"><a href="#2-例子" class="headerlink" title="2. 例子"></a>2. 例子</h2><h3 id="2-1-在方域上的非均匀热方程"><a href="#2-1-在方域上的非均匀热方程" class="headerlink" title="2.1 在方域上的非均匀热方程"></a>2.1 在方域上的非均匀热方程</h3><blockquote>
+<p> 这个方程是为了展示怎么用 <strong>solvepde</strong>函数求解热方程</p>
+</blockquote>
+<p>​              单位热源的热方程的一般形式是</p>
+<p>$$<br>\frac{\partial u}{\partial t} - \Delta u = 1<br>$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -489,7 +658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +669,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -511,7 +680,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
