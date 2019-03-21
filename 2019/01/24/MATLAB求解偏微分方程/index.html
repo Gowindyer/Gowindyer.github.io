@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Windyer&#39;s Bolg">
 <meta property="og:description" content="1. 偏微分方程工具箱介绍 本工具箱采用有限元分析求解偏微分方程  ​         偏微分方程工具箱提供有限元分析在 2-D，3-D和时间变量的空间下求解偏微分方程。通过它你可以选定和网格化 2-D 和 3-D 的几何空间并且规定边界条件和方程。也就是说在几何上，你可以用它求解 定常域（不含时间）、时域、频域和特征值问题。用于后处理的函数，如绘制结果的函数可以可视化研究结果。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-24T12:40:28.175Z">
+<meta property="og:updated_time" content="2019-03-21T15:58:19.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB求解偏微分方程">
 <meta name="twitter:description" content="1. 偏微分方程工具箱介绍 本工具箱采用有限元分析求解偏微分方程  ​         偏微分方程工具箱提供有限元分析在 2-D，3-D和时间变量的空间下求解偏微分方程。通过它你可以选定和网格化 2-D 和 3-D 的几何空间并且规定边界条件和方程。也就是说在几何上，你可以用它求解 定常域（不含时间）、时域、频域和特征值问题。用于后处理的函数，如绘制结果的函数可以可视化研究结果。">
@@ -411,7 +411,7 @@
 </blockquote>
 <p>​              单位热源的热方程的一般形式是</p>
 <script type="math/tex; mode=display">
-\frac{\partial u}{\partial t} - \Delta u = 1</script><h4 id="2-1-1-定义问题"><a href="#2-1-1-定义问题" class="headerlink" title="2.1.1  定义问题"></a>2.1.1  定义问题</h4><p>​         创建一个$x \in\left[ {0,2} \right] ,y\in\left[ {0,2} \right]$的正方形域，里面包含一个半径为0.4与正方形同心的圆作为选定的初始条件。</p>
+\frac{\partial u}{\partial t} - \Delta u = 1</script><h4 id="2-1-1-定义问题"><a href="#2-1-1-定义问题" class="headerlink" title="2.1.1  定义问题"></a>2.1.1  定义问题</h4><p>​         创建一个$x \in\left[ {-1,1} \right] ,y\in\left[ {-1,1} \right]​$的正方形域，里面包含一个半径为0.4与正方形同心的圆作为选定的初始条件。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">R1 = [<span class="number">3</span>;<span class="number">4</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">-1</span>;<span class="number">1</span>;<span class="number">1</span>];</span><br><span class="line">C1 = [<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>;<span class="number">0.4</span>];</span><br><span class="line">C1 = [C1;<span class="built_in">zeros</span>(<span class="built_in">length</span>(R1)-<span class="built_in">length</span>(C1),<span class="number">1</span>)];</span><br><span class="line">gd = [R1,C1];</span><br><span class="line">sf = <span class="string">'R1+C1'</span>;</span><br><span class="line">ns = char(<span class="string">'R1'</span>,<span class="string">'C1'</span>)';</span><br><span class="line">g = decsg(gd,sf,ns);</span><br></pre></td></tr></table></figure>
 <h4 id="2-1-2-创建一维偏微分方程"><a href="#2-1-2-创建一维偏微分方程" class="headerlink" title="2.1.2  创建一维偏微分方程"></a>2.1.2  创建一维偏微分方程</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">number0fPDE = <span class="number">1</span>;</span><br><span class="line">pdem = createpde(number0fPDE);</span><br></pre></td></tr></table></figure>
 <h4 id="2-1-3-创建一个几何体附加到PDE模型"><a href="#2-1-3-创建一个几何体附加到PDE模型" class="headerlink" title="2.1.3  创建一个几何体附加到PDE模型"></a>2.1.3  创建一个几何体附加到PDE模型</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geometryFormEdges(pdem,g)</span><br></pre></td></tr></table></figure>
@@ -425,7 +425,12 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nframes = <span class="number">20</span>;</span><br><span class="line">tlist = <span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">0.1</span>,nframes);</span><br></pre></td></tr></table></figure>
 <h4 id="2-1-9-用pdem的SolverOptions-Reportstartistics设置为on求解"><a href="#2-1-9-用pdem的SolverOptions-Reportstartistics设置为on求解" class="headerlink" title="2.1.9  用pdem的SolverOptions.Reportstartistics设置为on求解"></a>2.1.9  用pdem的SolverOptions.Reportstartistics设置为on求解</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pdem.SolveOptions.Reportstatistics = <span class="string">'on'</span>;</span><br><span class="line">result = solvepde(pdem,tlist);</span><br><span class="line">u1 = result.NodalSolution;</span><br></pre></td></tr></table></figure>
 <h4 id="2-1-10-绘画结果"><a href="#2-1-10-绘画结果" class="headerlink" title="2.1.10  绘画结果"></a>2.1.10  绘画结果</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line">umax = <span class="built_in">max</span>(<span class="built_in">max</span>(u1));</span><br><span class="line">umin = <span class="built_in">min</span>(<span class="built_in">min</span>(u1));</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="built_in">i</span>:nframes,</span><br><span class="line">    pdeplot(pdem,<span class="string">'xydata'</span>,u1(:,<span class="built_in">j</span>),<span class="string">'zdata'</span>,u1(:,<span class="built_in">j</span>));</span><br><span class="line">    caxis([umin,umax]);</span><br><span class="line">    axis([<span class="number">-1</span> <span class="number">1</span> <span class="number">-1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]);</span><br><span class="line">    Mv(<span class="built_in">j</span>) = getframe;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">movie(Mv,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="待续。。。"><a href="#待续。。。" class="headerlink" title="待续。。。"></a>待续。。。</h3>
+<h2 id="函数附录"><a href="#函数附录" class="headerlink" title="函数附录"></a>函数附录</h2><p>本附录主要对一些函数进行解释，且按问题学习分布。例如，<strong>2.1 在方域上的非均匀热方程</strong>中的陌生函数将出现在A部分。详情请看matlab帮助文档。</p>
+<h3 id="A"><a href="#A" class="headerlink" title="A"></a><strong>A</strong></h3><h4 id="1-decsg"><a href="#1-decsg" class="headerlink" title="1. decsg"></a>1. decsg</h4><blockquote>
+<p>将构建的实体几何体分解为小部分。</p>
+</blockquote>
+<h5 id="1-1-语法"><a href="#1-1-语法" class="headerlink" title="1.1 语法"></a>1.1 语法</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dl = decsg(gd,sf,ns)</span><br><span class="line">dl = decsg(gd)</span><br><span class="line">[dl,bt] = decsg(gd)</span><br><span class="line">[dl,bt] = decsg(gd,sf,ns)</span><br><span class="line">[dl,bt,dl1,dt1,msb] = decsg(gd)</span><br><span class="line">[dl,bt,dl1,dt1,msb] = decsg(gd,sf,ns)</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-描述"><a href="#1-2-描述" class="headerlink" title="1.2 描述"></a>1.2 描述</h5>
       
     </div>
     
@@ -466,6 +471,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/21/2019-3-21-面纱：一个女性的成长/" rel="prev" title="面纱：一个女性的成长">
+                面纱：一个女性的成长 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -554,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -576,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -616,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-偏微分方程工具箱介绍"><span class="nav-text">1. 偏微分方程工具箱介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1主要特点"><span class="nav-text">1.1主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-例子"><span class="nav-text">2. 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在方域上的非均匀热方程"><span class="nav-text">2.1 在方域上的非均匀热方程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-定义问题"><span class="nav-text">2.1.1  定义问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-创建一维偏微分方程"><span class="nav-text">2.1.2  创建一维偏微分方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-创建一个几何体附加到PDE模型"><span class="nav-text">2.1.3  创建一个几何体附加到PDE模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4-应用边界条件"><span class="nav-text">2.1.4  应用边界条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-5-选定PDE的系数"><span class="nav-text">2.1.5  选定PDE的系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-6-选定初始条件"><span class="nav-text">2.1.6  选定初始条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-7-生成网格"><span class="nav-text">2.1.7  生成网格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-8-对时间离散化"><span class="nav-text">2.1.8  对时间离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-9-用pdem的SolverOptions-Reportstartistics设置为on求解"><span class="nav-text">2.1.9  用pdem的SolverOptions.Reportstartistics设置为on求解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-10-绘画结果"><span class="nav-text">2.1.10  绘画结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待续。。。"><span class="nav-text">待续。。。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-偏微分方程工具箱介绍"><span class="nav-text">1. 偏微分方程工具箱介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1主要特点"><span class="nav-text">1.1主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-例子"><span class="nav-text">2. 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在方域上的非均匀热方程"><span class="nav-text">2.1 在方域上的非均匀热方程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-定义问题"><span class="nav-text">2.1.1  定义问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-创建一维偏微分方程"><span class="nav-text">2.1.2  创建一维偏微分方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-创建一个几何体附加到PDE模型"><span class="nav-text">2.1.3  创建一个几何体附加到PDE模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4-应用边界条件"><span class="nav-text">2.1.4  应用边界条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-5-选定PDE的系数"><span class="nav-text">2.1.5  选定PDE的系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-6-选定初始条件"><span class="nav-text">2.1.6  选定初始条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-7-生成网格"><span class="nav-text">2.1.7  生成网格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-8-对时间离散化"><span class="nav-text">2.1.8  对时间离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-9-用pdem的SolverOptions-Reportstartistics设置为on求解"><span class="nav-text">2.1.9  用pdem的SolverOptions.Reportstartistics设置为on求解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-10-绘画结果"><span class="nav-text">2.1.10  绘画结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数附录"><span class="nav-text">函数附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A"><span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-decsg"><span class="nav-text">1. decsg</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-语法"><span class="nav-text">1.1 语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-描述"><span class="nav-text">1.2 描述</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -6,17 +6,43 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-24T12:40:28.175Z</updated>
+  <updated>2019-03-21T15:58:36.990Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面纱：一个女性的成长</title>
+    <link href="http://yoursite.com/2019/03/21/2019-3-21-%E9%9D%A2%E7%BA%B1%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%A5%B3%E6%80%A7%E7%9A%84%E6%88%90%E9%95%BF/"/>
+    <id>http://yoursite.com/2019/03/21/2019-3-21-面纱：一个女性的成长/</id>
+    <published>2019-03-20T16:00:00.000Z</published>
+    <updated>2019-03-21T15:58:36.990Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="http://yoursite.com/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>MATLAB求解偏微分方程</title>
     <link href="http://yoursite.com/2019/01/24/MATLAB%E6%B1%82%E8%A7%A3%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/01/24/MATLAB求解偏微分方程/</id>
     <published>2019-01-23T16:00:00.000Z</published>
-    <updated>2019-01-24T12:40:28.175Z</updated>
+    <updated>2019-03-21T15:58:19.282Z</updated>
     
     <summary type="html">
     
